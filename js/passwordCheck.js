@@ -30,17 +30,23 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     };
 
     //TODO implement the other events in the exact same way!
+    this.passwordField.onfocus = function () {
+        that.check();
+    }
 
+    this.passwordField.onkeyup = function () {
+        that.check();
+    }
 
-
-
+    this.passwordSubmitButton.onclick = function () {
+        that.check()
+    }
     //TODO end
 
     this.check = function() {
         //we can only check if every field which with given Id exists
         //one of them would be null if one Id wouldn't exist therefore following statement would fail
         if(this.wrapperField && this.passwordField && this.passwordSubmitButton) {
-
             var longEnough = this.checkForLength();
             var hasSpecialChars = this.checkForSpecialCharacters();
 
@@ -71,7 +77,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     this.checkForLength = function() {
         //@todo
         //have a look at javascript string methods and properties
-        return true; //this needs to be replaced!
+        return; //this needs to be replaced!
     };
 
     /*
@@ -81,8 +87,6 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         //@todo
         //have a look at javascript string methods and properties
         //you could probably "match" it somehow
-        return true; //this needs to be replaced!
+        return; //this needs to be replaced!
     };
 }
-
-
