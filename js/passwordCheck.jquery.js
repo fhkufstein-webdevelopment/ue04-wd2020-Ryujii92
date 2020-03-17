@@ -91,5 +91,3 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     };
     //TODO 2 end
 }
-
-
